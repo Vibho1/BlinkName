@@ -25,26 +25,26 @@ void loop() {
   dit();
   dit();
   dah();
-  delay(1200);
+  delay(2800);
 
   // I
   dit();
   dit();
-  delay(1200);
+  delay(2800);
 
   // B
   dah();
   dit();
   dit();
   dit();
-  delay(1200);
+  delay(2800);
 
   // H
   dit();
   dit();
   dit();
   dit();
-  delay(1200);
+  delay(2800);
 
   // O
   dah();
