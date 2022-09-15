@@ -1,55 +1,161 @@
-// the setup function runs once when you press reset or power the board
+void dot() {
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(1000);                       // wait for 1 second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);
+}
+void dash() {
+  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
+  delay(3000);                       // wait for 3 second
+  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
+  delay(1000);
+}
+
 void setup() {
   // initialize digital pin LED_BUILTIN as an output.
   pinMode(LED_BUILTIN, OUTPUT);
-}
-
-void dit() {
-  digitalWrite(LED_BUILTIN, HIGH);   // turn the LED on (HIGH is the voltage level)
-  delay(350);                       // wait for a second
-  digitalWrite(LED_BUILTIN, LOW);    // turn the LED off by making the voltage LOW
-  delay(800);                       // wait for a second
-}
-
-void dah() {
-  digitalWrite(LED_BUILTIN, HIGH);
-  delay(1000);
-  digitalWrite(LED_BUILTIN, LOW);
-  delay(800);
+  Serial.begin(9600);
 }
 
 // the loop function runs over and over again forever
 void loop() {
-  // V
-  dit();
-  dit();
-  dit();
-  dah();
-  delay(2800);
+  String string = Serial.readString();
+  string.toUpperCase();
+  for (int i = 0; i < string.length(); i++) {
 
-  // I
-  dit();
-  dit();
-  delay(2800);
-
-  // B
-  dah();
-  dit();
-  dit();
-  dit();
-  delay(2800);
-
-  // H
-  dit();
-  dit();
-  dit();
-  dit();
-  delay(2800);
-
-  // O
-  dah();
-  dah();
-  dah();
-  delay(22800);
-  
+         if(string[i] == 'A'){
+            dot();
+            dash();
+         }
+         else if(string[i] == 'B'){
+            dash();
+            dot();
+            dot();
+            dot();
+         }
+         else if(string[i] == 'C'){
+            dash();
+            dot();
+            dash();
+            dot();
+         }
+         else if(string[i] == 'D'){
+            dash();
+            dot();
+            dot();
+         }
+         else if(string[i] == 'E'){
+            dot();
+         }
+         else if(string[i] == 'F'){
+            dot();
+            dot();
+            dash();
+            dot();
+         }
+         else if(string[i] == 'G'){
+            dash();
+            dash();
+            dot();
+         }
+         else if(string[i] == 'H'){
+            dot();
+            dot();
+            dot();
+            dot();
+         }
+         else if(string[i] == 'I'){
+            dot();
+            dot();
+         }
+         else if(string[i] == 'J'){
+            dot();
+            dash();
+            dash();
+            dash();
+         }
+         else if(string[i] == 'K'){
+            dash();
+            dot();
+            dash();
+         }
+         else if(string[i] == 'L'){
+            dot();
+            dash();
+            dot();
+            dot();
+         }
+         else if(string[i] == 'M'){
+            dash();
+            dash();
+         }
+         else if(string[i] == 'N'){
+            dash();
+            dot();
+         }
+         else if(string[i] == 'O'){
+            dash();
+            dash();
+            dash();
+         }
+         else if(string[i] == 'P'){
+            dot();
+            dash();
+            dash();
+            dot();
+         }
+         else if(string[i] == 'Q'){
+            dash();
+            dash();
+            dot();
+            dash();
+         }
+         else if(string[i] == 'R'){
+            dot();
+            dash();
+            dot();
+         }
+         else if(string[i] == 'S'){
+            dot();
+            dot();
+            dot();
+         }
+         else if(string[i] == 'T'){
+            dash();
+         }
+         else if(string[i] == 'U'){
+            dot();
+            dot();
+            dash();
+         }
+         else if(string[i] == 'V'){
+            dot();
+            dot();
+            dot();
+            dash();
+         }
+         else if(string[i] == 'W'){
+            dot();
+            dash();
+            dash();
+         }
+         else if(string[i] == 'X'){
+            dash();
+            dot();
+            dot();
+            dash();
+         }
+         else if(string[i] == 'Y'){
+            dash();
+            dot();
+            dash();
+            dash();
+         }
+         else if(string[i] == 'Z'){
+          dash();
+          dash();
+          dot();
+          dot();
+         }
+  }
 }
